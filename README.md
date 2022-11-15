@@ -9,8 +9,13 @@
 
 * Add words to get a photo on request
 * Request get 3 rand words from db
-* mini clicker :)
-* Cron schedule every day store image from request
+* Skeleton loader for gallery
+* Cron schedule every day store image from request 
+* Mini clicker :)
+
+
+## CRON:
+  * 0 1 * * * cd path_to_laravel && php artisan get:image >/dev/null 2>&1
 
 
 ## Tech Stack and Tools:
