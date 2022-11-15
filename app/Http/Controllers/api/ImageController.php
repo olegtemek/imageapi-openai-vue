@@ -12,7 +12,7 @@ class ImageController extends Controller
     {
         return response()->json([
             'status' => 200,
-            'data' => Image::all()
+            'data' => Image::orderBy('id', 'DESC')->get()
         ]);
     }
 }
