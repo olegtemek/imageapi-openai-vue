@@ -5,9 +5,9 @@
     <span>{{ props.day }}</span>
   </div>
   <div v-else class="gallery__item loading">
-    <div></div>
-    <h2></h2>
-    <span></span>
+    <div><div class="skeleton"></div></div>
+    <h2><div class="skeleton"></div></h2>
+    <span><div class="skeleton"></div></span>
   </div>
 </template>
 
@@ -31,7 +31,7 @@ onMounted(() => {
 
   imageLoading.onload = () => {
     imgSrc.value = imageLoading.src;
-    loaded.value = true;
+    // loaded.value = true;
   };
 });
 </script>
@@ -55,8 +55,10 @@ onMounted(() => {
       height: 80%;
       background-color: darken($white, 60);
       border-radius: $br;
+      position: relative;
     }
     h2 {
+      position: relative;
       display: block;
       width: 70%;
       height: 2%;
@@ -64,11 +66,42 @@ onMounted(() => {
       border-radius: $br;
     }
     span {
+      position: relative;
       display: block;
       width: 60%;
       height: 6%;
       background-color: darken($white, 60);
       border-radius: $br;
+    }
+    .skeleton {
+      width: 0;
+      height: 100%;
+      box-shadow: 0 0 50px 2px rgba(160, 160, 160, 0.5);
+      animation: skeleton 1.4s linear infinite;
+      position: absolute;
+      left: 0%;
+      top: 0;
+    }
+
+    @keyframes skeleton {
+      0% {
+        left: 0%;
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0;
+      }
+
+      50% {
+        left: 50%;
+        opacity: 1;
+      }
+
+      100% {
+        left: 100%;
+        opacity: 0;
+      }
     }
   }
 
