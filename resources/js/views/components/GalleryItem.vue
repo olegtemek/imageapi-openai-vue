@@ -31,7 +31,7 @@ onMounted(() => {
 
   imageLoading.onload = () => {
     imgSrc.value = imageLoading.src;
-    // loaded.value = true;
+    loaded.value = true;
   };
 });
 </script>
