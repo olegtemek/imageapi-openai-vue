@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+@import '@style/_normalize.scss';
+
+
+body {
+  font-family: 'Rubik';
+  font-weight: $fw-light;
+  background-color: $main;
+  color: $white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width:1280px) {
+    max-width: 980px;
+  }
+
+  @media (max-width:1024px) {
+    max-width: 700px;
+  }
+
+  @media (max-width:800px) {
+    max-width: 500px;
+  }
+
+  @media (max-width:540px) {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.btn {
+  color: $blue;
+  background-color: $blue-dark;
+  border-radius: $br;
+  padding: 10px 20px;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: lighten($blue-dark, 2);
+
+  }
+}
+
+
+/* we will explain what these classes do next! */
+.show-enter-active,
+.show-leave-active {
+  transition: opacity $tr;
+}
+
+.show-enter-from,
+.show-leave-to {
+  opacity: 0;
+}
